@@ -1,0 +1,17 @@
+name: bayesianStats
+channels:
+  - defaults
+dependencies:
+  - python=3.7
+  - numpy
+  - sphinx
+  - m2w64-toolchain
+  - mkl-service
+  - scipy
+  - nose
+  - libpython
+  - theano
+  - pygpu
+  - pymc3
+  - ipykernel
+prefix: C:\Users\carlo\miniconda3\envs\bayesianStats
