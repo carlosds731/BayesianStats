@@ -28,8 +28,13 @@ def get_posterior_part_b(data, l, h, sigma_0, number_of_samples):
         return pm.sample(number_of_samples, progressbar=True)
 
 
+# With this code you can see the Part a in action.
 if __name__ == "__main__":
-    data = stats.poisson.rvs(mu=10, size=100)
+    # Generating 20 samples of a Poisson distribution
+    # with parameter 10 (this means that our theta will be 0.1)
+    data = stats.poisson.rvs(mu=10, size=20)
     trace = get_posterior_part_a(data, 0, 1, 1000)
     az.plot_posterior(trace)
+    # When we plot the posterior, we see that
+    # is very close to the real value (0.1)
     plt.show()
