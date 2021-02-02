@@ -5,6 +5,9 @@ import arviz as az
 import theano
 from scipy import stats
 
+# Part a
+# theta~f
+# y~Exponential(theta)
 
 # Part b
 def get_posterior_samples(data, number_of_samples):

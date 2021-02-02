@@ -7,8 +7,8 @@ from scipy import stats
 
 
 # Part a
-# theta~f_theta
-# y~Exponential(theta)
+# theta~Uniform(0,1)
+# y~Uniform(0,theta)
 
 
 # Part b
