@@ -10,7 +10,7 @@ def analyze_time_of_day():
     tips = pd.read_csv('tips.csv')
     tips.tail()
     tip = tips['tip'].values
-    idx = pd.Categorical(tips['day'], categories=['Dinner', 'Lunch']).codes
+    idx = pd.Categorical(tips['time'], categories=['Dinner', 'Lunch']).codes
     groups = len(np.unique(idx))
 
     with pm.Model():
@@ -24,6 +24,7 @@ def analyze_time_of_day():
         y = pm.Normal('y', mu=mu[idx], sd=sigma[idx], observed=tip)
         trace_cg = pm.sample(5000)
         az.plot_trace(trace_cg)
+        plt.show()
 
     dist = stats.norm()
 
@@ -44,4 +45,6 @@ def analyze_time_of_day():
 if __name__ == "__main__":
     analyze_time_of_day()
 
-    # The data suggest that smoking has almost no influence on the tips.
+    # The data indicates that customers give bigger tips during dinner than during lunch.
+    # With at least 80% probability we can say that the time of day is a factor on
+    # the amount of tips received.

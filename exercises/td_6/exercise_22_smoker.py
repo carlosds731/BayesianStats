@@ -44,4 +44,4 @@ def analyze_smoker():
 if __name__ == "__main__":
     analyze_smoker()
 
-    # The data suggest that the time of the day has almost no influence on the tips.
+    # The data suggest that smoking has almost no influence on the tips.
