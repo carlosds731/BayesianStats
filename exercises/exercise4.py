@@ -19,7 +19,7 @@ def exercise4():
 
         positive_answers = pm.Binomial('positive_answers', n=num_questions,
                                        p=p, observed=[7])
-
+        map_estimator = pm.find_MAP(vars=[group])
         trace = pm.sample(4000, progressbar=True)
 
         az.plot_trace(trace)

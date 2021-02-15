@@ -14,7 +14,7 @@ def get_posterior_samples(data, number_of_samples):
     with pm.Model() as our_model:
         # Interpolated prior
         theta_1 = pm.Interpolated('theta_1', x_points=np.array([0, np.divide(1, np.sqrt(5))]),
-                                  pdf_points=np.array([0, 10 * np.sqrt(5)]))
+                                  pdf_points=np.array([0, np.divide(10, np.sqrt(5))]))
         # Exponential likelihood
         times = pm.Exponential('times', lam=theta_1, observed=data)
         trace = pm.sample(number_of_samples, progressbar=True)

@@ -15,7 +15,7 @@ from scipy import stats
 def get_posterior(data, number_of_samples):
     with pm.Model() as our_model:
         theta = pm.Uniform('theta', lower=max(data), upper=1)
-
+        
         y = pm.Uniform('y', lower=0, upper=theta,
                        observed=data)
 
