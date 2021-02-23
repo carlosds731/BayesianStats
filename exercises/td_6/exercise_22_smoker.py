@@ -34,7 +34,7 @@ def analyze_smoker():
     ps = dist.cdf(d_cohen / (2 ** 0.5))
     ax = plt.axes()
     # Plot the posterior distribution of the difference between the means
-    az.plot_posterior(means_diff, ref_val=0, ax=ax, hdi_prob=0.9)
+    az.plot_posterior(means_diff, ref_val=0, ax=ax, hdi_prob=0.97)
     ax.set_title('Difference between Non Smoker and Smoker')
     ax.plot(0, label=f"Cohen's d = {d_cohen:.2f}\nProb sup = {ps:.2f}", alpha=0)
     ax.legend()
