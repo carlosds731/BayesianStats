@@ -1,11 +1,7 @@
 import pymc3 as pm
-import theano
-import numpy as np
 import arviz as az
 import matplotlib.pyplot as plt
-from scipy import stats
 import pandas as pd
-import os
 
 
 def get_filtered_data():
