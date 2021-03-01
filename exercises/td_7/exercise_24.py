@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     # Part d
     bayes_factor = likelihood_under_h0 / likelihood_under_h1
-    print("The Bayes factor for the model is {:.3f}".format(bayes_factor))
+    print("The Bayes factor for the model is {:.7f}".format(bayes_factor))
 
     # Part e
     # The value of the Bayes factor indicates some evidence in favor of H0. Note that this
@@ -52,4 +52,4 @@ if __name__ == "__main__":
     # Because H0 and H1 have both 50% prior probabilities, the posterior probability
     # of H0 is just
     posterior_probability_h0 = bayes_factor / (bayes_factor + 1)
-    print("The probability that Barry's weight didn't change is {:.3f}".format(posterior_probability_h0))
+    print("The probability that Barry's weight didn't change is {:.7f}".format(posterior_probability_h0))
