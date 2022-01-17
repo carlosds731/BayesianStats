@@ -29,7 +29,7 @@ if __name__ == "__main__":
     # Part b
     plt.scatter(centered_weight, height)
     plt.xlabel('centered weight')
-    plt.xlabel('height')
+    plt.ylabel('height')
     plt.show()
 
     # When looking at the plot above this is with consistent our expectations.

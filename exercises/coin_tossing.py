@@ -6,7 +6,7 @@ import arviz as az
 # for the probability of getting heads.
 
 # Sample data
-data = [1, 1, 1, 0, 1, 1, 0, 0, 1, 1]
+data = [1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1]
 
 
 def coin_tossing():
@@ -24,7 +24,7 @@ def coin_tossing():
         plt.show()
 
         # Plot the sampled posterior
-        pp = az.plot_posterior(trace)
+        pp = az.plot_posterior(trace, ref_val=0.75, hdi_prob=0.95, point_estimate='mode')
         plt.show()
 
         # Print the summary

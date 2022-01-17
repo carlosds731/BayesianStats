@@ -10,7 +10,7 @@ if __name__ == "__main__":
     # Plotting the weight against the height
     plt.scatter(weight, height)
     plt.xlabel('weight')
-    plt.xlabel('height')
+    plt.ylabel('height')
     plt.show()
 
     # In this case, the relationship between the weight

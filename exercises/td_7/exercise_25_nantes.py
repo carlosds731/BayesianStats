@@ -18,24 +18,24 @@ if __name__ == "__main__":
         # Likelihood
         y = pm.Poisson('y', mu=lmbda, observed=data_nantes)
         traces_model_prior_2 = pm.sample_smc(2500)
-        az.plot_posterior(traces_model_prior_2)
-        plt.show()
+        #az.plot_posterior(traces_model_prior_2)
+        #plt.show()
 
     with pm.Model() as model_prior_3:
         lmbda = pm.Lognormal('lmbda', mu=2, sigma=0.5)
         # Likelihood
         y = pm.Poisson('y', mu=lmbda, observed=data_nantes)
         traces_model_prior_3 = pm.sample_smc(2500)
-        az.plot_posterior(traces_model_prior_3)
-        plt.show()
+        #az.plot_posterior(traces_model_prior_3)
+        #plt.show()
 
     with pm.Model() as model_prior_4:
         lmbda = pm.Lognormal('lmbda', mu=1, sigma=2)
         # Likelihood
         y = pm.Poisson('y', mu=lmbda, observed=data_nantes)
         traces_model_prior_4 = pm.sample_smc(2500)
-        az.plot_posterior(traces_model_prior_4)
-        plt.show()
+        #az.plot_posterior(traces_model_prior_4)
+        #plt.show()
 
     # Obtaining the marginal likelihoods for all the models
     likelihoods_under_model_1 = np.average(np.exp(traces_model_prior_1.report.log_marginal_likelihood))

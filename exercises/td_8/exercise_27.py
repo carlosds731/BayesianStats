@@ -28,7 +28,7 @@ if __name__ == "__main__":
     # Part b
     plt.scatter(weight, height)
     plt.xlabel('weight')
-    plt.xlabel('height')
+    plt.ylabel('height')
     plt.show()
 
     # When looking at the plot above this is with consistent our expectations.
