@@ -5,16 +5,13 @@ import arviz as az
 import theano
 from scipy import stats
 
-if __name__  == "__main__":
-    print("Do something")
-
 if __name__ == "__main__":
     # Read the data
     file1 = open('juliet_is_late_by.txt', 'r')
     Lines = file1.readlines()
     data = list()
     for line in Lines:
-        data.append(np.float(line))
+        data.append(line)
 
     with pm.Model() as juliette_is_late_model:
         theta = pm.Uniform('theta', lower=max(data), upper=1)
@@ -30,7 +27,7 @@ if __name__ == "__main__":
         # The quadratic estimation is just the expected value
         # of the posterior. To calculate this,
         # we need to obtain some samples of the posterior
-        posterior_samples = pm.sample(1000, progressbar=True)
+        posterior_samples = pm.sample(1000, progressbar=True, return_inferencedata=False)
 
         quadratic_estimation = np.average(posterior_samples['theta'])
         print("The quadratic estimation for theta is {0}".format(quadratic_estimation))

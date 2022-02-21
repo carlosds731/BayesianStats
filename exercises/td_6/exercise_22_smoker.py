@@ -40,8 +40,6 @@ def analyze_smoker():
     ax.legend()
     plt.show()
 
-az.plot_hpd()
-
 if __name__ == "__main__":
     analyze_smoker()
 

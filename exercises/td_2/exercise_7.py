@@ -1,5 +1,7 @@
 from scipy import stats
+import arviz as az
 
+az.summary()
 
 # Part a
 def get_posterior(a_prior, b_prior, data):
@@ -25,6 +27,7 @@ if __name__ == "__main__":
     # Part b
     bernoulli = stats.bernoulli(p=0.3)
     samples = bernoulli.rvs(10)
+    print(samples)
     posterior = get_posterior(a_prior=1, b_prior=1, data=samples)
     # Parts c and d
     calculate_mean_and_prod(samples)

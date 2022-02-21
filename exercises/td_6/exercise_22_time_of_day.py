@@ -46,5 +46,5 @@ if __name__ == "__main__":
     analyze_time_of_day()
 
     # The data indicates that customers give bigger tips during dinner than during lunch.
-    # With at least 80% probability we can say that the time of day is a factor on
+    # With at least 90% probability we can say that the time of day is a factor on
     # the amount of tips received.

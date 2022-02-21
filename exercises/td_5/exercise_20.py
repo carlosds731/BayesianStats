@@ -11,7 +11,7 @@ if __name__ == "__main__":
     Lines = file1.readlines()
     data = list()
     for line in Lines:
-        data.append(np.float(line))
+        data.append(line)
 
     with pm.Model() as inter_arrival_times:
         # Interpolated prior
@@ -34,6 +34,11 @@ if __name__ == "__main__":
         print("The quadratic estimation for theta_1 is {0}".format(quadratic_estimation))
 
         # Part c
+        # This will generate 1 array of 1000 predictions each (this is a 1x1000 matrix),
+        # because we want 200 predictions, we can return the first 200 elements.
+        predictions = pm.sample_posterior_predictive(posterior_samples, samples=1, model=inter_arrival_times)['times'].flatten()[:200]
+
+        # If for example we would like to obtain 2500 predictions we could do as follows:
         # This will generate 3 arrays of 1000 predictions each (this is a 3x1000 matrix),
         # because we want 2500 predictions, we can put all the rows together (obtaining a 1x3000 matrix of predictions)
         # and we can return the first 2500 elements.
@@ -45,7 +50,7 @@ if __name__ == "__main__":
                                                              model=inter_arrival_times)
         data_ppc = az.from_pymc3(trace=posterior_samples, posterior_predictive=predictions_for_ppc)
         ax = az.plot_ppc(data_ppc, figsize=(12, 6), mean=False)
-        ax[0].legend(fontsize=15)
+        ax.legend(fontsize=15)
         plt.show()
         # The graph shows that the model is quite accurate.
 

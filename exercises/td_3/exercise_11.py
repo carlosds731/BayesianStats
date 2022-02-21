@@ -25,4 +25,5 @@ if __name__ == "__main__":
     az.plot_posterior(data={'theta': data}, var_names='theta', hdi_prob=0.8, rope=[-3.5, 3.5])
     plt.show()
 
-    # Because the ROPE region contains the HDI, with 80% of certainty we can say that the experiment was successful.
+    # Because 90% of the distribution is inside the ROPE, we can say, with at least 90% confidence that the experiment
+    # was successful.

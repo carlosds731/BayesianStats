@@ -22,8 +22,7 @@ def get_posterior_part_b(data, l, h, sigma_0, number_of_samples):
         theta = pm.Uniform('theta', lower=l, upper=h)
         sigma = pm.HalfNormal('sigma', sigma=sigma_0)
 
-        y = pm.Normal('y', mu=theta, sigma=sigma,
-                      observed=data)
+        y = pm.Normal('y', mu=theta, sigma=sigma, observed=data)
 
         return pm.sample(number_of_samples, progressbar=True)
 

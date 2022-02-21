@@ -20,7 +20,7 @@ def find_map(num_correct_answers):
         positive_answers = pm.Binomial('positive_answers', n=num_questions,
                                        p=p, observed=[num_correct_answers])
 
-        trace = pm.sample(1000, progressbar=True)
+        trace = pm.sample(1000, progressbar=True, return_inferencedata=False)
 
         az.plot_posterior(trace, point_estimate='mode')
 

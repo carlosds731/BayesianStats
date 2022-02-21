@@ -46,5 +46,5 @@ if __name__ == "__main__":
     az.plot_posterior(posterior_samples, hdi_prob=0.95, rope=[1 / 25, 1 / 20])
     plt.show()
     # As we can see on the plot, there is no intersection between the ROPE and the 95% HDI.
-    # This means that, 95% accurracy, we can say that the mean inter arrival time is not
+    # This means that, with 95% accuracy, we can say that the mean inter arrival time is not
     # between 20 and 25 minutes.
