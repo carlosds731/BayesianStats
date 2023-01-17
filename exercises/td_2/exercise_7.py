@@ -1,7 +1,4 @@
 from scipy import stats
-import arviz as az
-
-az.summary()
 
 # Part a
 def get_posterior(a_prior, b_prior, data):

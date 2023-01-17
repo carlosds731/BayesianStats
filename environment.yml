@@ -2,7 +2,6 @@ name: bayesianStats
 channels:
   - defaults
 dependencies:
-  - python=3.7
   - numpy
   - sphinx
   - mkl-service
@@ -10,4 +9,3 @@ dependencies:
   - nose
   - pymc3
   - ipykernel
-prefix: C:\Users\carlo\miniconda3\envs\bayesianStats

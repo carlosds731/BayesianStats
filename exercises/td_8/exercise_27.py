@@ -31,7 +31,7 @@ if __name__ == "__main__":
     plt.ylabel('height')
     plt.show()
 
-    # When looking at the plot above this is with consistent our expectations.
+    # When looking at the plot above it is consistent with our expectations.
     # As weight increases, height increases as well. From visual inspection,
     # it looks like a linear fit with some noise is best.
 
@@ -73,5 +73,5 @@ if __name__ == "__main__":
     # Parts f and g
 
     # From visual inspection the average parameters of the fit look quite good,
-    # and the 99% interval of the posterior predictive checks covers most of
+    # and the 95% interval of the posterior predictive checks covers most of
     # the distribution. Overall, it looks like a linear fit is great for height vs weight for people over 18!

@@ -1,0 +1,6 @@
+pymc3
+numpy
+scipy
+arviz
+jupyter
+notebook

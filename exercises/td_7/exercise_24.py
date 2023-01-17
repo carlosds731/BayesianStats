@@ -17,6 +17,7 @@ if __name__ == "__main__":
     # the multiplication of the values of the probability
     # density function
     vals = stats.norm(loc=177, scale=3).pdf(data)
+    # the next line multiplies the values
     likelihood_under_h0 = np.prod(vals)
 
     print("The marginal likelihood under H0 is {0}".format(likelihood_under_h0))

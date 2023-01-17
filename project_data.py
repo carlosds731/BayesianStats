@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 def read_csv():
     student_names = list()
-    with open('names.csv', newline='') as csvfile:
+    with open('names_2022.csv', newline='') as csvfile:
         spamreader = csv.reader(csvfile, quotechar='|')
         for row in spamreader:
             student_names.append(''.join(row))
@@ -26,19 +26,19 @@ def get_posterior_exponential_likelihood(data):
 
 
 if __name__ == "__main__":
-    student_names = read_csv()
-    params = np.linspace(start=2 / 3 - 0.1, stop=2 / 3 + 0.1, num=len(student_names))
-    selected_params = np.random.choice(params, replace=False, size=len(student_names))
-
+    # student_names = read_csv()
+    # params = np.linspace(start=2 / 3 - 0.1, stop=2 / 3 + 0.1, num=len(student_names))
+    # selected_params = np.random.choice(params, replace=False, size=len(student_names))
+    #
     # for j, name in enumerate(student_names):
     #     data = expon(scale=selected_params[j]).rvs(50)
     #     pd.DataFrame(data).to_csv(os.path.join('students_data', '{0}.csv'.format(name)), header=False, index=False)
 
-    for name in ['AniaBougherara']:
+    for name in ['CelineSkander']:
         data = pd.read_csv(os.path.join('students_data', "{0}.csv".format(name)))
         with pm.Model() as model_g:
             param = pm.HalfNormal('param', sigma=10)
             y = pm.Exponential('y', lam=param, observed=data)
             trace_g = pm.sample(2000)
-            az.plot_posterior(trace_g)
+            az.plot_posterior(trace_g, ref_val=1.5)
             plt.show()
