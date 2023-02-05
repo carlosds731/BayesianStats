@@ -3,7 +3,7 @@ import pymc3 as pm
 import arviz as az
 from scipy import stats
 
-# We have a biased and we flip it many times. We count the number of heads. What's the posterior distribution
+# We have a biased coin and we flip it many times. We count the number of heads. We want the posterior distribution
 # for the probability of getting heads.
 
 # Sample data
@@ -49,7 +49,7 @@ def coin_tossing_with_given_prior_and_data(a_prior, b_prior, data):
         plt.show()
 
         # Plot the sampled posterior
-        pp = az.plot_posterior(trace)
+        az.plot_posterior(trace)
         plt.show()
 
         # Print the summary

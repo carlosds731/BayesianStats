@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import arviz as az
 
 
+# This line is just to avoid this error https://github.com/apache/mxnet/issues/10562#issuecomment-907360893
 if __name__ == "__main__":
     # This is just the data
     data = [1, 1, 1, 0, 1, 1, 0, 0, 1, 1]
@@ -26,7 +27,7 @@ if __name__ == "__main__":
     plt.show()
 
     # The following line summarizes the posterior distribution
-    az.summary(trace)
+    print(az.summary(trace))
 
     # This code plots the probability density function of the
     # posterior distribution with a reference value of 0.5

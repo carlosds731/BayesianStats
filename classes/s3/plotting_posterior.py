@@ -6,6 +6,6 @@ import matplotlib.pyplot as plt
 from scipy import stats
 # Let's generate 1000 samples of a Beta(8,4) distribution
 data = stats.beta.rvs(8, 4, size=1000)
-# Plot the distribution, with its mean and the HDI, specifying a 99% of
+# Plot the distribution, with its mean and the HDI at 99%
 result = az.plot_posterior(data={'theta':data}, var_names='theta', hdi_prob=0.99)
 plt.show()

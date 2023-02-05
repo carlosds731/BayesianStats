@@ -17,7 +17,7 @@ def from_posterior(param, samples):
     y = stats.gaussian_kde(samples)(x)
 
     # what was never sampled should have a small probability but not 0,
-    # so we'll extend the domain and use linear approximation of density on it.
+    # so we'll extend the domain and use linear approximation of the density on it.
     # The number 3 is arbitrary here, you  can put any positive number you want.
     x = np.concatenate([[x[0] - 3 * width], x, [x[-1] + 3 * width]])
     y = np.concatenate([[0], y, [0]])

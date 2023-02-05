@@ -28,7 +28,7 @@ if __name__ == "__main__":
     Lines = file1.readlines()
     data = list()
     for line in Lines:
-        data.append(np.float(line))
+        data.append(float(line))
 
     # Part c
     posterior_samples = get_posterior(data, 1500)
@@ -40,6 +40,7 @@ if __name__ == "__main__":
     # Notice that az.summary returns a data frame object, so we can access it's members.
     # Also notice that the summary gives us the standard deviation, so, to get the variance
     # we need to square.
+    # If Romeo gathers more data, the variance should decrease
     print(
         'The expected value is {0} and the variance is {1}'.format(result['mean']['theta'],
                                                                    np.power(result['sd']['theta'], 2)))

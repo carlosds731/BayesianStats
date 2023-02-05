@@ -30,7 +30,7 @@ if __name__ == "__main__":
     for line in Lines:
         data.append(np.float(line))
     # Obtain the posterior samples
-    posterior_samples = get_posterior_samples(data=data, number_of_samples=2000)
+    posterior_samples = get_posterior_samples(data=data, number_of_samples=1000)
 
     # Part c and d
     # Plot the posterior with the 97% HDI

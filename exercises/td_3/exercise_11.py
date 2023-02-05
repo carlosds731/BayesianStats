@@ -12,7 +12,7 @@ if __name__ == "__main__":
     # Part b
     # P(X<0)
     prob = stats.norm.cdf(0, loc=0.5, scale=2)
-    print("Given the data, the probability that theta is smaller of equal than 0 is {0:.2f}".format(prob))
+    print("Given the data, the probability that theta is smaller or equal than 0 is {0:.2f}".format(prob))
 
     # Part c and d
     # Generate 100000 samples of a Normal(0.5, 4)
@@ -25,5 +25,5 @@ if __name__ == "__main__":
     az.plot_posterior(data={'theta': data}, var_names='theta', hdi_prob=0.8, rope=[-3.5, 3.5])
     plt.show()
 
-    # Because 90% of the distribution is inside the ROPE, we can say, with at least 90% confidence that the experiment
+    # Because 91.2% of the distribution is inside the ROPE, we can say, with at least 91.2% confidence that the experiment
     # was successful.
